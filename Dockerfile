@@ -12,3 +12,4 @@ ENV PHARO_HOME=${TARANTUBE_DIR}
 VOLUME [ "${TARANTUBE_DIR}" ]
 
 ADD ./config/startup.st ${TARANTUBE_DIR}/config/
+ENV PHARO_START_SCRIPT=${TARANTUBE_DIR}/config/startup.st
