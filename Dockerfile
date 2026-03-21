@@ -4,8 +4,8 @@ LABEL maintainer="Masashi Umezawa <ume@softumeya.com>"
 ARG TARANTUBE_DIR=/root/tarantube
 ARG REPOS_URL=github://mumez/Tarantube/repository
 
-RUN setup.sh && \
-    save-pharo.sh metacello install ${REPOS_URL} BaselineOfTarantube && \
+RUN PHARO_MODE=headless setup.sh && \
+    PHARO_MODE=headless save-pharo.sh metacello install ${REPOS_URL} BaselineOfTarantube && \
     cp -r /root/data ${TARANTUBE_DIR}
 
 ENV PHARO_HOME=${TARANTUBE_DIR}
